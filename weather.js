@@ -3,7 +3,10 @@ $(function()
   var handleWeatherResponse = function(data) {
     console.log(data);
     console.log(JSON.stringify(data));
-var markup = "the temperature is " + data.currently.temperature + " today";
+var markup = "the temperature is " + data.currently.temperature + " F today" + "<br>" + "Also it's very "
++ data.currently.icon + "<br>" + data.alerts[0].title + "!" + "<br>" + "If you're from " + data.timezone + " then be careful!!!" + "<br>"
++ "Windy city's wind speed is: " + data.currently.windSpeed + " mph :D"
+;
     $('.weather-report').html(markup);
   }
   $('a.get-the-weather').on('click', function(event) {
