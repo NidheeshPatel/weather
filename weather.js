@@ -1,27 +1,9 @@
-$(function() {
+$(function()
+  {
   var handleWeatherResponse = function(data) {
     console.log(data);
     console.log(JSON.stringify(data));
-    
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <h1>I'm on the left</h1>
-      </div>
-      <div class="col-sm-4">
-        <h1>I'm in the middle!!</h1>
-      </div>
-      <div class="col-sm-4">
-        <h1>I'm on the right</h1> 
-      </div>
-    </div>
-  </div>
-</body>
-
-
-    var markup = "The weather report... " + "is here!";
-
+var markup = "the temperature is " + data.currently.temperature + " today";
     $('.weather-report').html(markup);
   }
   $('a.get-the-weather').on('click', function(event) {
